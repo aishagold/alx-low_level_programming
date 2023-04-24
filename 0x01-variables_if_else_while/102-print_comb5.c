@@ -1,45 +1,33 @@
 #include <stdio.h>
 
 /**
- * main- a program that prints all possible combinations of two two-digits
- * Return: Always 0 (Success)
+ * main - prints all possible combinations of two two-digit numbers
+ * Return: 0
  */
-
 int main(void)
 {
-	int tens1, units1, tens2, units2;
+	int i, j;
 
-	for (tens1 = 0; tens1 <= 9; tens1++)
+	for (i = 0; i < 100; i++)
 	{
-		for (units1 = 0; units1 <= 9; units1++)
+		for (j = i; j < 100; j++)
 		{
-			for (tens2 = tens1; tens2 <= 9; tens2++)
-			{
-				int start = (tens2 == tens1) ? units1 : 0;
+		if (i != j && !(i == 0 && j == 1))
+		{
+			putchar(i / 10 + '0');
+			putchar(i % 10 + '0');
+			putchar(' ');
+			putchar(j / 10 + '0');
+			putchar(j % 10 + '0');
 
-				for (units2 = start; units2 <= 9; units2++)
-				{
-					if (tens1 == tens2 && units1 >= units2)
-					{
-					putchar(tens1 + '0');
-					putchar(units1 + '0');
-					putchar(' ');
-					putchar(tens2 + '0');
-					putchar(units2 + '0');
-					}
-					if (tens1 == 9 && units1 == 9 && tens2 == 9 && units2 == 9)
-					{
-					putchar('\n');
-					}
-					else
-					{
-					putchar(',');
-					putchar(' ');
-					}
-				}
+			if (!(i == 98 && j == 99))
+			{
+				putchar(',');
+				putchar(' ');
 			}
 		}
 		}
+	}
 
 	return (0);
 }
