@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
  * main - prints the name of this program
  * @argc: argument count
  * @argv: array of pointers to arguments
- * Return : 0 on Success
+ * Return: 0 on Success
  */
 
 int main(int argc, char *argv[])
@@ -16,5 +15,6 @@ int main(int argc, char *argv[])
 	{
 		printf("%s\n", argv[0]);
 	}
+
 	return (0);
 }
