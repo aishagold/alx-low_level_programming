@@ -41,6 +41,7 @@ int main(void)
     char *buffer;
 
     buffer = create_array(98, 'H');
+
     if  (buffer == NULL)
     {
         printf("failed to allocate memory\n");
